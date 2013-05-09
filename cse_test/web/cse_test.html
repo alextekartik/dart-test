@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cse test</title>
+    <link rel="stylesheet" href="cse_test.css">
+  </head>
+  <body>
+    <h1>Cse test</h1>
+    
+    <div id="search">
+      <script>
+      (function() {
+        var cx = '005824627690293238670:dxh5ki1si30';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+    </div>
+    <p>Hello world from Dart!</p>
+    
+    <div id="sample_container_id">
+      <p id="sample_text_id"></p>
+    </div>
+
+    <script type="application/dart" src="cse_test.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
