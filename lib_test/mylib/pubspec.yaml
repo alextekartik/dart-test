@@ -1,0 +1,4 @@
+name: mylib
+description: A sample lib
+#dependencies:
+#  unittest: any
