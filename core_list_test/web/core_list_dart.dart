@@ -31,23 +31,33 @@ _generateName(inMin, inMax) {
 
 @CustomTag('list-test')
 class ListTest extends PolymerElement {
-  final int count = 50000;
+
   @observable ObservableList data;
 
   ListTest.created() : super.created();
 
   @override ready() {
-    this.data = this.generateData();
+    this.data = this.generateData(5);
+
+    $['add'].onClick.listen((_) {
+      this.data = this.generateData(data.length + 1);
+    });
+
+    $['delete'].onClick.listen((_) {
+      if (data.length > 0) {
+        this.data = this.generateData(data.length - 1);
+      }
+    });
   }
 
-  generateData() {
+  generateData(int count) {
     var names = <String>[],
         data = new ObservableList();
-    for (var i = 0; i < this.count; i++) {
+    for (var i = 0; i < count; i++) {
       names.add(_generateName(4, 8));
     }
     names.sort();
-    for (var i = 0; i < this.count; i++) {
+    for (var i = 0; i < count; i++) {
       var name = names[i];
       var divider = name[0];
 
@@ -65,7 +75,7 @@ class ListTest extends PolymerElement {
 
 class TestItem {
   String get backgroundColor {
-    return ['red', 'yellow', 'blue', 'green', 'black'][index % 5];
+    return ['red', 'yellow', 'blue', 'green', 'gray'][index % 5];
   }
   int index;
   String name;
