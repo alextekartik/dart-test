@@ -8,10 +8,10 @@ AudioContext audioContext;
 void main() {
   audioContext = new AudioContext();
   querySelector("#play_note")..onClick.listen(playNote);
-  querySelector("#play_file")..onClick.listen(playMp3);
+  querySelector("#play_file")..onClick.listen(playFile);
 }
 
-playMp3(_) {
+playFile(_) {
   GainNode gainNode = audioContext.createGain();
 
   // get the audio file
