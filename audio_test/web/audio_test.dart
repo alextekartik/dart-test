@@ -14,17 +14,21 @@ void main() {
 playMp3(_) {
   GainNode gainNode = audioContext.createGain();
 
+  // get the audio file
   return HttpRequest.request("sample.ogg", responseType: "arraybuffer").then((HttpRequest request) {
+    // decode it
     return audioContext.decodeAudioData(request.response).then((AudioBuffer buffer) {
       AudioBufferSourceNode source = audioContext.createBufferSource();
       source.buffer = buffer;
       source.connectNode(audioContext.destination);
+      // play it now
       source.start(audioContext.currentTime);
     });
   });
 
 }
 playNote(_) {
+  // create the buffer data from scratch
   final int SAMPLE_RATE = 44100;
   final double PI_2 = PI * 2;
   final int BUFFER_SIZE = 4096;
@@ -39,5 +43,6 @@ playNote(_) {
   AudioBufferSourceNode source = audioContext.createBufferSource();
   source.buffer = audioBuffer;
   source.connectNode(audioContext.destination);
+  // play it now
   source.start(audioContext.currentTime);
 }
