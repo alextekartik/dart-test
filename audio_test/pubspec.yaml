@@ -1,0 +1,4 @@
+name: audio_test
+description: A sample web audio application
+dependencies:
+  browser: any
