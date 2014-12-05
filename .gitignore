@@ -4,3 +4,6 @@ pubspec.lock
 *.js.deps
 *.js.map
 .buildlog
+.pub/
+packages/
+build/

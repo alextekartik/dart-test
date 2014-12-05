@@ -1,0 +1,5 @@
+name: route_test
+description: A sample route test app
+dependencies:
+  browser: any
+  route: any
