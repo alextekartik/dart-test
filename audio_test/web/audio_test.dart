@@ -2,6 +2,7 @@ import 'dart:html';
 import 'dart:web_audio';
 import 'dart:typed_data';
 import 'dart:math';
+import 'dart:async';
 
 AudioContext audioContext;
 
@@ -9,6 +10,7 @@ void main() {
   audioContext = new AudioContext();
   querySelector("#play_note")..onClick.listen(playNote);
   querySelector("#play_file")..onClick.listen(playFile);
+  querySelector("#play_oscillator")..onClick.listen(playOscillator);
 }
 
 playFile(_) {
@@ -45,4 +47,14 @@ playNote(_) {
   source.connectNode(audioContext.destination);
   // play it now
   source.start(audioContext.currentTime);
+}
+
+playOscillator(_) {
+  OscillatorNode oscillator = audioContext.createOscillator(); // Create sound source
+
+  oscillator.connectNode(audioContext.destination); // Connect sound to output
+  oscillator.start(0); // Play instantly
+  new Future.delayed(new Duration(milliseconds: 1000), () {
+    oscillator.disconnect(0);
+  });
 }
