@@ -58,7 +58,7 @@ onLoggedIn(AutoRefreshingAuthClient authClient) {
 
 Future _inFlow(Future action(BrowserOAuth2Flow flow)) {
   if (_flow == null) {
-    createImplicitBrowserFlow(clientId, scopes).then((BrowserOAuth2Flow flow_) {
+    return createImplicitBrowserFlow(clientId, scopes).then((BrowserOAuth2Flow flow_) {
       _flow = flow_;
       return action(_flow);
     }).catchError((e, st) {
