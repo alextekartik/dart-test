@@ -7,3 +7,5 @@ pubspec.lock
 .pub/
 packages/
 build/
+tmp/
+
