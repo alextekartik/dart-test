@@ -1,16 +1,11 @@
 import 'dart:html';
 
 void main() {
-  querySelector("#sample_text_id")
-      ..text = "Click me!"
-      ..onClick.listen(reverseText);
-}
-
-void reverseText(MouseEvent event) {
-  var text = querySelector("#sample_text_id").text;
-  var buffer = new StringBuffer();
-  for (int i = text.length - 1; i >= 0; i--) {
-    buffer.write(text[i]);
-  }
-  querySelector("#sample_text_id").text = buffer.toString();
+  window.indexedDB.getDatabaseNames().then((List<String> names) {
+    UListElement ul = document.body.querySelector('#databases');
+    for (String name in names) {
+      ul.append(new LIElement()..text = name);
+    }
+    document.body.querySelector('#database_count').text = "${names.length} databases found";
+  });
 }

@@ -3,4 +3,4 @@ description: key_range_test
 dependencies:
   browser: any
 dev_dependencies:
-  unittest: any
+  test: any

@@ -14,7 +14,7 @@ void main() {
 }
 
 playFile(_) {
-  GainNode gainNode = audioContext.createGain();
+  //GainNode gainNode = audioContext.createGain();
 
   // get the audio file
   return HttpRequest.request("sample.ogg", responseType: "arraybuffer").then((HttpRequest request) {

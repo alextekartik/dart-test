@@ -8,5 +8,4 @@ environment:
 dependencies:
   tekartik_io_tools:
       git: git://github.com/alextekartik/tekartik_io_tools.dart
-dev_dependencies:
-  unittest: any
+

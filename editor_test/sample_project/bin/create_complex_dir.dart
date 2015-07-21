@@ -1,5 +1,4 @@
 import 'package:tekartik_io_tools/file_utils.dart';
-import 'package:tekartik_core/dev_utils.dart';
 import 'package:tekartik_io_tools/platform_utils.dart';
 import 'package:path/path.dart';
 import 'dart:async';

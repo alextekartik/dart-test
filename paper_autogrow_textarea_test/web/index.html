@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>paper_autogrow_textarea_test</title>
     <link rel="import" href="packages/paper_elements/paper_autogrow_textarea.html">
     <link rel="import" href="packages/paper_elements/paper_input_decorator.html">
-  </head>
- 
-  <body unresolved>
-    <paper-input-decorator label="with autogrowing text area">
-      <paper-autogrow-textarea id="simple_autogrow_textarea">
-        <textarea id="simple_textarea"></textarea>
-      </paper-autogrow-textarea>
-    </paper-input-decorator>   
-    <script type="application/dart">
-      import 'package:polymer/polymer.dart';
-      import 'package:paper_elements/paper_input_decorator.dart';
-      import 'package:paper_elements/paper_autogrow_textarea.dart';
-      import 'dart:html';
+</head>
 
-      main() {
-        initPolymer().run(() {
-          Polymer.onReady.then((_) {
+<body unresolved>
+<paper-input-decorator label="with autogrowing text area">
+    <paper-autogrow-textarea id="simple_autogrow_textarea">
+        <textarea id="simple_textarea"></textarea>
+    </paper-autogrow-textarea>
+</paper-input-decorator>
+<script type="application/dart">
+    import 'package:polymer/polymer.dart';
+    import 'package:paper_elements/paper_input_decorator.dart';
+    import 'package:paper_elements/paper_autogrow_textarea.dart';
+    import 'dart:html';
+
+    main() {
+        initPolymer().then((_) {
             (querySelector('#simple_textarea') as TextAreaElement).value = "Some\nmulti-line\ntext";
             (querySelector('#simple_autogrow_textarea') as PaperAutogrowTextarea).update();
-          });
         });
-      }
-    </script>
-  </body>
+    }
+</script>
+</body>
 </html>
