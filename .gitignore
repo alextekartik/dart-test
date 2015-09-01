@@ -6,6 +6,7 @@ pubspec.lock
 .buildlog
 .pub/
 packages/
+.packages
 build/
 tmp/
 .idea/
