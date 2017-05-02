@@ -2,6 +2,10 @@
 
 Dart simple tests
 
+## angular_main_component_class_test
+
+Simple test showing the issue of the class of the main component being removed during bootstrap
+
 ## key_range_test ##
 
 Test that shows issue accessing some KeyRange getter
