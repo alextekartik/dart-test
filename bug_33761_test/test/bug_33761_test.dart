@@ -6,6 +6,7 @@ bool callbackIsNull;
 class Test2 {
   Future test(void callback()) async {
     callbackIsNull = callback == null;
+    return new Future.value();
   }
 }
 
