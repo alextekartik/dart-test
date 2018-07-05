@@ -10,8 +10,11 @@ Runnning test the following way works fine
 
     pub run test -p vm
     pub run build_runner test -- -p chrome
+    pub run build_runner test -- -p firefox
     
 Running it this way fails
     
     pub run test -p chrome
+    pub run test -p firefox
     pub run build_runner test -r -- -p chrome
+    pub run build_runner test -r -- -p firefox
