@@ -1,4 +1,13 @@
 name: audio_test
 description: A sample web audio application
+environment:
+  sdk: '>=2.6.0 <3.0.0'
+
 dependencies:
-  browser: any
+
+dev_dependencies:
+  process_run:
+  build_runner: '>=0.9.0'
+  build_test: '>=0.10.2'
+  build_web_compilers: '>=0.4.0'
+  pedantic: '>=1.9.0'
