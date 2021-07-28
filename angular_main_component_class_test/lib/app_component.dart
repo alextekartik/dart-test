@@ -8,10 +8,10 @@ import 'hello_dialog/hello_dialog.dart';
 
 @Component(
   selector: 'my-app',
-  styleUrls: const ['app_component.css'],
+  styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: const [materialDirectives, HelloDialog],
-  providers: const [materialProviders],
+  directives: [materialDirectives, HelloDialog],
+  providers: [materialProviders],
 )
 class AppComponent {
   // Nothing here yet. All logic is in HelloDialog.

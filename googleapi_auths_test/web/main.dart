@@ -4,7 +4,9 @@ import 'dart:html';
 import 'dart:async';
 
 // tekartik-noapi project - replace with your own
-final ClientId clientId = new ClientId("673610294238-qvk8j295q46sb752nj20oapdjsmrmgde.apps.googleusercontent.com", null);
+final ClientId clientId = new ClientId(
+    "673610294238-qvk8j295q46sb752nj20oapdjsmrmgde.apps.googleusercontent.com",
+    null);
 final List<String> scopes = ["email"];
 
 // deployed to
@@ -35,7 +37,9 @@ void setErrorStatus(String msg, e, st) {
 
 Future clientViaUserConsent(BrowserOAuth2Flow flow, {bool immediate}) {
 // Try am immediate sign-in first
-  return flow.clientViaUserConsent(immediate: immediate).then((AutoRefreshingAuthClient client) {
+  return flow
+      .clientViaUserConsent(immediate: immediate)
+      .then((AutoRefreshingAuthClient client) {
     onLoggedIn(client);
   }).catchError((e, st) {
     setErrorStatus("clientViaUserConsent", e, st);
@@ -58,7 +62,8 @@ onLoggedIn(AutoRefreshingAuthClient authClient) {
 
 Future _inFlow(Future action(BrowserOAuth2Flow flow)) {
   if (_flow == null) {
-    return createImplicitBrowserFlow(clientId, scopes).then((BrowserOAuth2Flow flow_) {
+    return createImplicitBrowserFlow(clientId, scopes)
+        .then((BrowserOAuth2Flow flow_) {
       _flow = flow_;
       return action(_flow);
     }).catchError((e, st) {
@@ -88,9 +93,7 @@ main() {
         onLoggedIn(result.newClient());
       }).catchError((e, st) {
         setErrorStatus("clientViaUserConsent", e, st);
-      }).whenComplete(() {
-
-      });
+      }).whenComplete(() {});
     });
   });
 
@@ -99,12 +102,11 @@ main() {
       _flow.close();
       _flow = null;
     }
-    status = 'logged out (?)'; // well are we really logged out 
+    status = 'logged out (?)'; // well are we really logged out
   });
 
   // automatic login
   _inFlow((BrowserOAuth2Flow flow) {
     return clientViaUserConsent(flow, immediate: true);
   });
-
 }

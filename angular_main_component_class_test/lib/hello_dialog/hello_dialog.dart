@@ -6,10 +6,10 @@ import 'package:angular_components/angular_components.dart';
 
 @Component(
   selector: 'hello-dialog',
-  styleUrls: const ['hello_dialog.css'],
+  styleUrls: ['hello_dialog.css'],
   templateUrl: 'hello_dialog.html',
-  directives: const [materialDirectives],
-  providers: const [materialProviders],
+  directives: [materialDirectives],
+  providers: [materialProviders],
 )
 class HelloDialog {
   /// Modal component that hosts the inner MaterialDialog in a centered overlay.

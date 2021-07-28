@@ -4,17 +4,17 @@ import 'package:route/client.dart';
 
 void main() {
   querySelector("#sample_text_id")
-      ..text = "Click me!"
-      ..onClick.listen(reverseText);
-  
+    ..text = "Click me!"
+    ..onClick.listen(reverseText);
+
   Router router = new Router(useFragment: true);
   router.addHandler(new UrlPattern(r'/'), (_) {
     print('root');
   }); // Homepage
-  router.addHandler(new UrlPattern(r'/fish/'),  (_) {
+  router.addHandler(new UrlPattern(r'/fish/'), (_) {
     print('fish');
   }); // Fish page
-  router.addHandler(new UrlPattern(r'.*'),  (_) {
+  router.addHandler(new UrlPattern(r'.*'), (_) {
     print('else');
   }); // Everything else
   router.listen();

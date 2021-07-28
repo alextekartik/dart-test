@@ -34,11 +34,10 @@ Future playFile(_) {
 
 void playNote(_) {
   // create the buffer data from scratch
-  final  SAMPLE_RATE = 44100;
-  final  PI_2 = pi * 2;
-  final  BUFFER_SIZE = 4096;
-  final audioBuffer =
-      audioContext.createBuffer(1, BUFFER_SIZE, SAMPLE_RATE);
+  final SAMPLE_RATE = 44100;
+  final PI_2 = pi * 2;
+  final BUFFER_SIZE = 4096;
+  final audioBuffer = audioContext.createBuffer(1, BUFFER_SIZE, SAMPLE_RATE);
 
   final buf = audioBuffer.getChannelData(0);
 
@@ -54,8 +53,7 @@ void playNote(_) {
 }
 
 Future playOscillator(_) async {
-  var oscillator =
-      audioContext.createOscillator(); // Create sound source
+  var oscillator = audioContext.createOscillator(); // Create sound source
 
   oscillator.connectNode(audioContext.destination); // Connect sound to output
   oscillator.start2(0); // Play instantly

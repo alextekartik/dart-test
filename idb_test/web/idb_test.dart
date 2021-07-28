@@ -6,6 +6,7 @@ void main() {
     for (String name in names) {
       ul.append(new LIElement()..text = name);
     }
-    document.body.querySelector('#database_count').text = "${names.length} databases found";
+    document.body.querySelector('#database_count').text =
+        "${names.length} databases found";
   });
 }

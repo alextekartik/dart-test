@@ -12,7 +12,12 @@ import 'dart:html';
 import 'dart:math' as math;
 import 'package:polymer/polymer.dart';
 
-var strings = ["PARKOUR!", "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur," " adipisci velit...", "Lorem Ipsum is simply dummy text of the printing and typesetting industry."];
+var strings = [
+  "PARKOUR!",
+  "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,"
+      " adipisci velit...",
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+];
 
 final _random = new math.Random();
 
@@ -28,15 +33,15 @@ _generateName(inMin, inMax) {
   return _generateString(_random.nextInt(inMax - inMin + 1) + inMin);
 }
 
-
 @CustomTag('list-test')
 class ListTest extends PolymerElement {
-
-  @observable ObservableList data;
+  @observable
+  ObservableList data;
 
   ListTest.created() : super.created();
 
-  @override ready() {
+  @override
+  ready() {
     this.data = this.generateData(5);
 
     $['add'].onClick.listen((_) {
@@ -51,8 +56,7 @@ class ListTest extends PolymerElement {
   }
 
   generateData(int count) {
-    var names = <String>[],
-        data = new ObservableList();
+    var names = <String>[], data = new ObservableList();
     for (var i = 0; i < count; i++) {
       names.add(_generateName(4, 8));
     }
@@ -64,10 +68,16 @@ class ListTest extends PolymerElement {
       if (i == 0 || divider == names[i - 1][0]) {
         divider = null;
       }
-      data.add(new TestItem(index: i, name: name, divider: divider, details: strings[i % 3], time: '8:29pm'));
+      data.add(new TestItem(
+          index: i,
+          name: name,
+          divider: divider,
+          details: strings[i % 3],
+          time: '8:29pm'));
     }
     return data;
   }
+
   tapAction(e) {
     window.console.log('tap $e');
   }
@@ -77,6 +87,7 @@ class TestItem {
   String get backgroundColor {
     return ['red', 'yellow', 'blue', 'green', 'gray'][index % 5];
   }
+
   int index;
   String name;
   String divider;
