@@ -8,9 +8,9 @@ AudioContext audioContext;
 
 void main() {
   audioContext = AudioContext();
-  querySelector('#play_note')..onClick.listen(playNote);
-  querySelector('#play_file')..onClick.listen(playFile);
-  querySelector('#play_oscillator')..onClick.listen(playOscillator);
+  querySelector('#play_note').onClick.listen(playNote);
+  querySelector('#play_file').onClick.listen(playFile);
+  querySelector('#play_oscillator').onClick.listen(playOscillator);
 }
 
 Future playFile(_) {
