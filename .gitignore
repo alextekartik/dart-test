@@ -1,12 +1,7 @@
-packages
+.dart_tool/
 pubspec.lock
+build/
 *.dart.js
 *.js.deps
 *.js.map
-.buildlog
-.pub/
-packages/
-.packages
-build/
-tmp/
 .idea/

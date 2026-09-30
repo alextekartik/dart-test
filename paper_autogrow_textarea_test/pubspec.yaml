@@ -1,8 +1,0 @@
-name: paper_autogrow_textarea_test
-description: autogrow update test
-dependencies:
-  paper_elements: any
-  polymer: any
-transformers:
-- polymer:
-    entry_points:

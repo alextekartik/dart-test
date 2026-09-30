@@ -1,0 +1,10 @@
+name: _
+description: dart-test workspace, simple Dart experiments
+publish_to: none
+environment:
+  sdk: ^3.13.0
+workspace:
+  - audio_test
+  - key_range_test
+  - lib_test/myapp
+  - lib_test/mylib

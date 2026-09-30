@@ -1,13 +1,10 @@
 name: audio_test
-description: A sample web audio application
+description: A sample web audio application (dart:web_audio)
+publish_to: none
+resolution: workspace
 environment:
-  sdk: '>=2.6.0 <3.0.0'
-
-dependencies:
-
+  sdk: ^3.13.0
 dev_dependencies:
-  process_run:
-  build_runner: '>=0.9.0'
-  build_test: '>=0.10.2'
-  build_web_compilers: '>=0.4.0'
-  pedantic: '>=1.9.0'
+  build_runner: '>=2.4.0'
+  build_web_compilers: '>=4.0.0'
+  lints: '>=6.0.0'

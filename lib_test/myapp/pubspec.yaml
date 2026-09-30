@@ -1,6 +1,11 @@
 name: myapp
-description: A sample app
+description: A sample app depending on a path lib
+publish_to: none
+resolution: workspace
+environment:
+  sdk: ^3.13.0
 dependencies:
   mylib:
     path: ../mylib
-
+dev_dependencies:
+  lints: '>=6.0.0'

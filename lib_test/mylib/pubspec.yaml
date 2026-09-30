@@ -1,4 +1,8 @@
 name: mylib
 description: A sample lib
-#dependencies:
-#  unittest: any
+publish_to: none
+resolution: workspace
+environment:
+  sdk: ^3.13.0
+dev_dependencies:
+  lints: '>=6.0.0'

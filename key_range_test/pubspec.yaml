@@ -1,6 +1,9 @@
-name: key_range
-description: key_range_test
-dependencies:
-  browser: any
+name: key_range_test
+description: dart:indexed_db KeyRange getters test (run with dart test -p chrome)
+publish_to: none
+resolution: workspace
+environment:
+  sdk: ^3.13.0
 dev_dependencies:
-  test: any
+  lints: '>=6.0.0'
+  test: '>=1.25.0'
