@@ -54,5 +54,7 @@ Future<void> playOscillator(Event _) async {
   oscillator.connectNode(audioContext.destination!); // Connect sound to output
   oscillator.start2(0); // Play instantly
   await Future<void>.delayed(const Duration(milliseconds: 1000));
+  // Stop it, a started source node is never released otherwise
+  oscillator.stop(0);
   oscillator.disconnect(0);
 }
